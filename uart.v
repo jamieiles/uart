@@ -2,15 +2,15 @@
 `include "transmitter.v"
 `include "baudgen.v"
 
-module uart(din, wr_en, clk_50m, tx, tx_busy, rx, rdy, rdy_clr, dout);
-
-input [7:0] din;
-input wr_en, clk_50m, rx, rdy_clr;
-output tx, tx_busy, rdy;
-output [7:0] dout;
-
-wire [7:0] din;
-wire clk_50m, tx, tx_busy, rx, rdy_clr;
+module uart(input wire [7:0] din,
+	    input wire wr_en,
+	    input wire clk_50m,
+	    output wire tx,
+	    output wire tx_busy,
+	    input wire rx,
+	    output wire rdy,
+	    input wire rdy_clr,
+	    output wire [7:0] dout);
 
 wire rxclk_en, txclk_en;
 
