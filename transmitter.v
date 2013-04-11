@@ -1,17 +1,13 @@
-module transmitter(din, wr_en, clk_50m, clken, tx, tx_busy);
+module transmitter(input wire [7:0] din,
+		   input wire wr_en,
+		   input wire clk_50m,
+		   input wire clken,
+		   output reg tx,
+		   output wire tx_busy);
 
-input [7:0] din;
-input wr_en;
-input clk_50m;
-input clken;
-output tx;
-output tx_busy;
-
-wire [7:0] din;
-wire wr_en;
-wire clk_50m;
-wire tx_busy;
-reg tx = 1'b1;
+initial begin
+	 tx = 1'b1;
+end
 
 parameter STATE_IDLE	= 2'b00;
 parameter STATE_START	= 2'b01;
