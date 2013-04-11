@@ -14,7 +14,6 @@ wire clk_50m, rxclk_en, txclk_en;
 
 reg [4:0] rx_acc = 0;
 reg [15:0] tx_acc = 0;
-wire [15:0] foo = RX_ACC_MAX;
 
 assign rxclk_en = (rx_acc == 5'd0);
 assign txclk_en = (tx_acc == 9'd0);

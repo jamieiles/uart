@@ -1,10 +1,10 @@
 module receiver(rx, rdy, rdy_clr, clk_50m, clken, data);
 
-input rx, din, clk_50m, clken, rdy_clr;
+input rx, clk_50m, clken, rdy_clr;
 output rdy;
 output [7:0] data;
 
-wire rx, din, clk_50m, clken, rdy_clr;
+wire rx, clk_50m, clken, rdy_clr;
 reg rdy = 0;
 reg [7:0] data = 8'b0;
 reg [7:0] scratch = 8'b0;
