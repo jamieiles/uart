@@ -57,7 +57,7 @@ always @(posedge clk_50m) begin
 			 * transition into handling the next start bit.
 			 */
 			if (sample == 15 || (sample >= 8 && !rx)) begin
-				state = RX_STATE_START;
+				state <= RX_STATE_START;
 				data <= scratch;
 				rdy <= 1'b1;
 				sample <= 0;
