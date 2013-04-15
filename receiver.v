@@ -43,7 +43,7 @@ always @(posedge clk_50m) begin
 		RX_STATE_DATA: begin
 			sample <= sample + 4'b1;
 			if (sample == 4'h8) begin
-				scratch[bitpos] <= rx;
+				scratch[bitpos[2:0]] <= rx;
 				bitpos <= bitpos + 4'b1;
 			end
 			if (bitpos == 8 && sample == 15)
@@ -64,6 +64,9 @@ always @(posedge clk_50m) begin
 			end else begin
 				sample <= sample + 4'b1;
 			end
+		end
+		default: begin
+			state <= RX_STATE_START;
 		end
 		endcase
 	end
